@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Sleep Story Is Right for You? — Free Quiz | TheSleepOutpost</title>
+    <meta name="description" content="Take our free 60-second quiz to find your perfect sleep story. Ancient worlds, ocean voyages, space travel, nature escapes, or fantasy realms — discover which category helps YOU fall asleep fastest.">
+    <meta name="keywords" content="sleep story quiz, which sleep story, find sleep story, best sleep story for me, sleep story recommendation, sleep quiz">
+    <meta property="og:title" content="Which Sleep Story Is Right for You? — Free Quiz">
+    <meta property="og:description" content="60-second quiz to find your perfect sleep story category. Ancient, Ocean, Sci-Fi, Nature, or Fantasy?">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jarvisviper5.github.io/thesleepoutpost/quiz/">
+    <link rel="canonical" href="https://jarvisviper5.github.io/thesleepoutpost/quiz/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Sleep Story Quiz — Find Your Perfect Story",
+        "description": "Interactive quiz to match adults with the ideal sleep story category.",
+        "publisher": {"@type": "Organization", "name": "TheSleepOutpost"}
+    }
+    </script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#0d1117;--card-bg:#161b22;--border:#30363d;--text:#e6edf3;--text-muted:#8b949e;--accent:#7c8aff;--green:#3fb950;
+            --ancient:#f0c040;--ocean:#40a4f0;--scifi:#b940f0;--nature:#3fb950;--fantasy:#f064a0}
+        body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;min-height:100vh}
+        .stars{position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(2px 2px at 20px 30px,#eee,transparent),radial-gradient(1px 1px at 90px 40px,#fff,transparent),radial-gradient(2px 2px at 200px 50px,#eee,transparent);background-repeat:repeat;background-size:320px 200px;opacity:.2;z-index:0;pointer-events:none}
+        .container{position:relative;z-index:1;max-width:600px;margin:0 auto;padding:2rem 1.5rem}
+        .breadcrumb{font-size:.8rem;color:var(--text-muted);margin-bottom:1.5rem}
+        .breadcrumb a{color:var(--accent);text-decoration:none}
+        h1{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem;text-align:center}
+        .subtitle{color:var(--text-muted);font-size:.92rem;text-align:center;margin-bottom:2rem}
+        .progress{display:flex;gap:4px;margin-bottom:1.5rem}
+        .progress-dot{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background .3s}
+        .progress-dot.active{background:var(--accent)}
+        .progress-dot.done{background:var(--green)}
+        .question-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.75rem;margin-bottom:1rem;animation:fadeIn .4s ease}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .question-card h2{font-size:1.1rem;font-weight:700;margin-bottom:1rem}
+        .question-num{color:var(--text-muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+        .options{display:flex;flex-direction:column;gap:.5rem}
+        .option{background:var(--bg);border:2px solid var(--border);border-radius:10px;padding:.75rem 1rem;cursor:pointer;transition:all .2s;font-size:.92rem;display:flex;align-items:center;gap:.6rem}
+        .option:hover{border-color:var(--accent);background:rgba(124,138,255,.08)}
+        .option .emoji{font-size:1.2rem;flex-shrink:0}
+        .result-card{background:var(--card-bg);border:2px solid var(--accent);border-radius:14px;padding:2rem;text-align:center;animation:fadeIn .5s ease}
+        .result-emoji{font-size:3rem;margin-bottom:.75rem}
+        .result-title{font-size:1.3rem;font-weight:800;margin-bottom:.5rem}
+        .result-desc{color:var(--text-muted);font-size:.92rem;margin-bottom:1.5rem;line-height:1.7}
+        .result-stories{text-align:left;margin:1.5rem 0}
+        .result-stories h3{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:.75rem}
+        .result-stories a{display:block;color:var(--text);text-decoration:none;padding:.4rem .6rem;margin:.25rem 0;border-radius:6px;background:var(--bg);border:1px solid var(--border);font-size:.88rem;transition:border-color .2s}
+        .result-stories a:hover{border-color:var(--accent);color:var(--accent)}
+        .cta-row{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+        .cta-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.25rem;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;transition:transform .15s;cursor:pointer;border:none}
+        .cta-btn:hover{transform:translateY(-1px)}
+        .cta-yt{background:#ff0000;color:#fff}
+        .cta-retake{background:var(--accent);color:#fff}
+        .cta-browse{background:var(--green);color:#0d1117}
+        .hidden{display:none}
+        .footer{text-align:center;color:var(--text-muted);font-size:.75rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+        .footer a{color:var(--text-muted);text-decoration:none}
+        .footer a:hover{color:var(--text)}
+        .match-bar{width:100%;height:8px;background:var(--border);border-radius:4px;margin:.75rem 0;overflow:hidden}
+        .match-fill{height:100%;border-radius:4px;transition:width .8s ease}
+        .match-label{font-size:.78rem;color:var(--text-muted);display:flex;justify-content:space-between}
+        @media(max-width:480px){.container{padding:1.5rem 1rem}h1{font-size:1.3rem}.option{padding:.6rem .8rem}}
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../">TheSleepOutpost</a> &rarr; Sleep Story Quiz
+        </div>
+
+        <h1>Which Sleep Story Is Right for You?</h1>
+        <p class="subtitle">Answer 5 quick questions to find your perfect story category</p>
+
+        <div class="progress" id="progress"></div>
+        <div id="quiz-container"></div>
+
+        <div class="footer">
+            <p>&copy; 2026 TheSleepOutpost</p>
+            <p style="margin-top:.5rem">
+                <a href="../">Home</a> &middot;
+                <a href="../best-sleep-stories/">Best Stories</a> &middot;
+                <a href="../tips/">Sleep Tips</a> &middot;
+                <a href="../story/">All 51 Stories</a> &middot;
+                <a href="https://youtube.com/@thesleepoutpost">YouTube</a>
+            </p>
+        </div>
+    </div>
+
+<script>
+const questions = [
+    {
+        q: "When you close your eyes, where does your mind naturally wander?",
+        options: [
+            { text: "Ancient temples, forgotten cities, old stone paths", emoji: "🏛️", scores: { ancient: 3, fantasy: 1 } },
+            { text: "Ocean waves, coastal winds, harbor lights", emoji: "🌊", scores: { ocean: 3, nature: 1 } },
+            { text: "Space stations, starships, distant planets", emoji: "🚀", scores: { scifi: 3 } },
+            { text: "Forest trails, rain on leaves, mountain valleys", emoji: "🌲", scores: { nature: 3, ocean: 1 } },
+            { text: "Enchanted gardens, magical libraries, cozy villages", emoji: "🧙", scores: { fantasy: 3, ancient: 1 } }
+        ]
+    },
+    {
+        q: "What kind of background sound helps you relax most?",
+        options: [
+            { text: "Stone echoes, distant flutes, fire crackling", emoji: "🔥", scores: { ancient: 3 } },
+            { text: "Waves lapping, seabirds, water against a boat", emoji: "🐚", scores: { ocean: 3 } },
+            { text: "Gentle engine hum, soft beeping, airlock whispers", emoji: "✨", scores: { scifi: 3 } },
+            { text: "Rain, birdsong, wind through trees", emoji: "🍃", scores: { nature: 3 } },
+            { text: "Chimes, bubbling potions, pages turning", emoji: "🔔", scores: { fantasy: 3 } }
+        ]
+    },
+    {
+        q: "Pick a color that feels most calming to you:",
+        options: [
+            { text: "Warm gold and sandstone", emoji: "🟡", scores: { ancient: 3, fantasy: 1 } },
+            { text: "Deep blue and turquoise", emoji: "🔵", scores: { ocean: 3 } },
+            { text: "Purple and silver", emoji: "🟣", scores: { scifi: 3 } },
+            { text: "Deep green and earth brown", emoji: "🟢", scores: { nature: 3 } },
+            { text: "Rose pink and soft lavender", emoji: "🩷", scores: { fantasy: 3, ocean: 1 } }
+        ]
+    },
+    {
+        q: "What's your ideal way to fall asleep?",
+        options: [
+            { text: "Imagining I'm exploring somewhere ancient and mysterious", emoji: "🗺️", scores: { ancient: 3 } },
+            { text: "Feeling like I'm rocking gently on water", emoji: "⛵", scores: { ocean: 3, nature: 1 } },
+            { text: "Floating weightlessly through something vast and quiet", emoji: "🌌", scores: { scifi: 3 } },
+            { text: "Walking slowly through a peaceful natural landscape", emoji: "🥾", scores: { nature: 3 } },
+            { text: "Being wrapped in warmth and gentle magic", emoji: "🕯️", scores: { fantasy: 3 } }
+        ]
+    },
+    {
+        q: "Which of these would you most enjoy reading before bed?",
+        options: [
+            { text: "A historical novel set in Egypt, Rome, or Mesopotamia", emoji: "📜", scores: { ancient: 3 } },
+            { text: "A story about a lighthouse keeper on a remote island", emoji: "🏝️", scores: { ocean: 3, nature: 1 } },
+            { text: "A quiet sci-fi novel about a long space journey", emoji: "📖", scores: { scifi: 3 } },
+            { text: "Nature writing about forests, mountains, or seasons", emoji: "🌿", scores: { nature: 3 } },
+            { text: "A cozy fantasy about a magical apothecary or library", emoji: "📚", scores: { fantasy: 3 } }
+        ]
+    }
+];
+
+const categories = {
+    ancient: {
+        name: "Ancient Worlds",
+        emoji: "🏛️",
+        color: "#f0c040",
+        desc: "You're drawn to history, mystery, and the grandeur of civilizations past. Your ideal sleep story takes you through moonlit temples, along ancient trade routes, and into libraries that hold the wisdom of ages. The weight of history soothes you — knowing that these stones have stood for millennia makes your worries feel small and temporary.",
+        stories: [
+            { title: "The Ancient Library of Alexandria", slug: "the-ancient-library-of-alexandria-a-journey-through-time" },
+            { title: "Moonlit Barge Along the Nile to Thebes", slug: "moonlit-barge-along-the-nile-to-thebes" },
+            { title: "The Silk Road Inn at Samarkand Dusk", slug: "the-silk-road-inn-at-samarkand-dusk" },
+            { title: "Temple Steps of Delphi Under Starlight", slug: "temple-steps-of-delphi-under-starlight" }
+        ]
+    },
+    ocean: {
+        name: "Ocean Voyages",
+        emoji: "🌊",
+        color: "#40a4f0",
+        desc: "The rhythm of the ocean calls to you. Your ideal sleep story carries you on gentle currents through bioluminescent bays, past quiet harbors, and along shores where the only sound is waves meeting sand. Water has always calmed you — the infinite, rhythmic patience of the tide matches the breathing pattern of deep sleep.",
+        stories: [
+            { title: "Bioluminescent Bay Crossing at Midnight", slug: "bioluminescent-bay-crossing-at-midnight" },
+            { title: "Deep Current Passage Under Lantern Stars", slug: "deep-current-passage-under-lantern-stars" },
+            { title: "The Gentle Harbor Beyond Silver Waves", slug: "the-gentle-harbor-beyond-silver-waves" },
+            { title: "The Sleepy Cove Beneath Clouded Moonlight", slug: "the-sleepy-cove-beneath-clouded-moonlight" }
+        ]
+    },
+    scifi: {
+        name: "Sci-Fi Journeys",
+        emoji: "🚀",
+        color: "#b940f0",
+        desc: "Your mind reaches for the stars. Your ideal sleep story puts you aboard a sleeper train drifting through Saturn's rings, or on a quiet tram gliding beneath Europa's ice. The gentle hum of distant engines and the vast silence of space create a cocoon of calm — out there, nothing can reach you, nothing needs your attention. Just the slow drift toward dawn.",
+        stories: [
+            { title: "A Sleeper Train Through the Rings of Saturn", slug: "a-sleeper-train-drifting-through-the-rings-of-saturn-carryin" },
+            { title: "The Quiet Tram Through Europa Night", slug: "the-quiet-tram-through-europa-night" },
+            { title: "The Sleeper Ferry Through Proxima Dawn", slug: "the-sleeper-ferry-through-proxima-dawn" },
+            { title: "Slow Orbit Over the Jade Ringworld", slug: "slow-orbit-over-the-jade-ringworld" }
+        ]
+    },
+    nature: {
+        name: "Nature Escapes",
+        emoji: "🌲",
+        color: "#3fb950",
+        desc: "You find peace in the natural world. Your ideal sleep story walks you through bamboo highlands in gentle rain, beneath ancient redwood canopies, or along fern-lined valleys where summer rain patters on broad leaves. Nature doesn't ask anything of you — it just holds space. And in that holding, you find it easy to let go.",
+        stories: [
+            { title: "Rain Lantern Walk in the Bamboo Highlands", slug: "rain-lantern-walk-in-the-bamboo-highlands" },
+            { title: "Night Walk Beneath the Old Redwood Veil", slug: "night-walk-beneath-the-old-redwood-veil" },
+            { title: "The Quiet Fern Valley Under Summer Rain", slug: "the-quiet-fern-valley-under-summer-rain" },
+            { title: "Mist Path Through the Cedar Moon Valley", slug: "mist-path-through-the-cedar-moon-valley" }
+        ]
+    },
+    fantasy: {
+        name: "Fantasy Realms",
+        emoji: "🧙",
+        color: "#f064a0",
+        desc: "You're enchanted by gentle magic and cozy wonder. Your ideal sleep story leads you through glowing feywoods, into starlit apothecaries filled with dried herbs, or up golden stairs to forgotten libraries in the clouds. The magic in these stories isn't dramatic — it's warm, like a spell specifically designed to tuck you in.",
+        stories: [
+            { title: "The Golden Stair Through the Feywood", slug: "the-golden-stair-through-the-feywood" },
+            { title: "The Starlit Apothecary of Willowmere", slug: "the-starlit-apothecary-of-willowmere" },
+            { title: "The Forgotten Library of Cloudspire", slug: "the-forgotten-library-of-cloudspire" },
+            { title: "The Soft Bell Tower of Aurora Hollow", slug: "the-soft-bell-tower-of-aurora-hollow" }
+        ]
+    }
+};
+
+let currentQ = 0;
+let scores = { ancient: 0, ocean: 0, scifi: 0, nature: 0, fantasy: 0 };
+
+function renderProgress() {
+    const el = document.getElementById('progress');
+    el.innerHTML = questions.map((_, i) => 
+        `<div class="progress-dot ${i < currentQ ? 'done' : ''} ${i === currentQ ? 'active' : ''}"></div>`
+    ).join('');
+}
+
+function renderQuestion() {
+    const container = document.getElementById('quiz-container');
+    if (currentQ >= questions.length) {
+        showResult();
+        return;
+    }
+    const q = questions[currentQ];
+    container.innerHTML = `
+        <div class="question-card">
+            <p class="question-num">Question ${currentQ + 1} of ${questions.length}</p>
+            <h2>${q.q}</h2>
+            <div class="options">
+                ${q.options.map((opt, i) => `
+                    <div class="option" onclick="selectOption(${i})">
+                        <span class="emoji">${opt.emoji}</span>
+                        <span>${opt.text}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    renderProgress();
+}
+
+function selectOption(idx) {
+    const opt = questions[currentQ].options[idx];
+    for (const [cat, pts] of Object.entries(opt.scores)) {
+        scores[cat] = (scores[cat] || 0) + pts;
+    }
+    currentQ++;
+    renderQuestion();
+}
+
+function showResult() {
+    const container = document.getElementById('quiz-container');
+    const progressEl = document.getElementById('progress');
+    progressEl.innerHTML = questions.map(() => '<div class="progress-dot done"></div>').join('');
+
+    // Sort categories by score
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const topCat = sorted[0][0];
+    const maxScore = sorted[0][1];
+    const cat = categories[topCat];
+
+    // Build match percentages
+    const totalPossible = questions.length * 3;
+    const matchBars = sorted.filter(([_, s]) => s > 0).map(([key, score]) => {
+        const pct = Math.round((score / totalPossible) * 100);
+        const c = categories[key];
+        return `
+            <div style="margin-bottom:.5rem">
+                <div class="match-label">
+                    <span>${c.emoji} ${c.name}</span>
+                    <span>${pct}%</span>
+                </div>
+                <div class="match-bar">
+                    <div class="match-fill" style="width:${pct}%;background:${c.color}"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    const storyLinks = cat.stories.map(s => 
+        `<a href="../story/${s.slug}/">${s.title}</a>`
+    ).join('');
+
+    container.innerHTML = `
+        <div class="result-card">
+            <div class="result-emoji">${cat.emoji}</div>
+            <div class="result-title" style="color:${cat.color}">Your Match: ${cat.name}</div>
+            <p class="result-desc">${cat.desc}</p>
+
+            <div style="text-align:left;margin:1.5rem 0">
+                <h3 style="font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:.75rem">Your Category Match</h3>
+                ${matchBars}
+            </div>
+
+            <div class="result-stories">
+                <h3>Start with these stories</h3>
+                ${storyLinks}
+            </div>
+
+            <div class="cta-row">
+                <a href="https://youtube.com/@thesleepoutpost/search?query=${encodeURIComponent(cat.name.toLowerCase())}" target="_blank" class="cta-btn cta-yt">&#9654; Listen on YouTube</a>
+                <button onclick="retake()" class="cta-btn cta-retake">&#8634; Retake Quiz</button>
+                <a href="../story/" class="cta-btn cta-browse">All 51 Stories</a>
+            </div>
+        </div>
+    `;
+
+    // Animate match bars
+    setTimeout(() => {
+        document.querySelectorAll('.match-fill').forEach(el => {
+            el.style.width = el.style.width; // trigger reflow
+        });
+    }, 100);
+}
+
+function retake() {
+    currentQ = 0;
+    scores = { ancient: 0, ocean: 0, scifi: 0, nature: 0, fantasy: 0 };
+    renderQuestion();
+}
+
+// Start
+renderQuestion();
+</script>
+</body>
+</html>
