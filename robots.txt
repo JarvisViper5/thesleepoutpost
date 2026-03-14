@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jarvisviper5.github.io/thesleepoutpost/sitemap.xml
