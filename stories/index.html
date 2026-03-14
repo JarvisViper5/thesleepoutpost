@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Sleep Story Excerpts for Adults — TheSleepOutpost</title>
+    <meta name="description" content="Read free excerpts from our sleep story collections. Ancient worlds, ocean voyages, sci-fi adventures, nature walks, fantasy quests, and more. Each story is designed to help adults fall asleep.">
+    <meta name="keywords" content="sleep stories for adults, bedtime stories free, sleep story text, relaxing stories to read, stories to fall asleep to, bedtime reading adults">
+    <meta property="og:title" content="Free Sleep Story Excerpts — TheSleepOutpost">
+    <meta property="og:description" content="Read free excerpts from 48 sleep stories. Ancient worlds, ocean voyages, sci-fi, nature, and fantasy.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jarvisviper5.github.io/thesleepoutpost/stories/">
+    <link rel="canonical" href="https://jarvisviper5.github.io/thesleepoutpost/stories/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Free Sleep Story Excerpts",
+        "description": "Free excerpts from TheSleepOutpost's collection of 48 bedtime stories for adults.",
+        "url": "https://jarvisviper5.github.io/thesleepoutpost/stories/",
+        "isPartOf": {"@type": "WebSite", "name": "TheSleepOutpost"}
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #7c8aff;
+            --accent-glow: rgba(124, 138, 255, 0.15);
+            --green: #3fb950;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .stars {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.4), transparent);
+            background-repeat: repeat;
+            background-size: 320px 200px;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.3; }
+        .subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; }
+        .story-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .story-card:hover { border-color: var(--accent); }
+        .story-card .category {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+        .cat-ancient { background: rgba(240, 192, 64, 0.15); color: #f0c040; }
+        .cat-ocean { background: rgba(64, 164, 240, 0.15); color: #40a4f0; }
+        .cat-scifi { background: rgba(185, 64, 240, 0.15); color: #b940f0; }
+        .cat-nature { background: rgba(63, 185, 80, 0.15); color: #3fb950; }
+        .cat-fantasy { background: rgba(240, 100, 160, 0.15); color: #f064a0; }
+        .cat-journey { background: rgba(240, 140, 64, 0.15); color: #f08c40; }
+        .story-card h2 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+        .excerpt {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+            font-style: italic;
+            border-left: 3px solid var(--border);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        .story-card .listen-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .story-card .listen-link:hover { text-decoration: underline; }
+        .cta-box {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(63, 185, 80, 0.1), rgba(124, 138, 255, 0.08));
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .cta-box h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .cta-box p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.75rem; }
+        .cta-btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--green);
+            color: #0d1117;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.15s;
+            margin: 0.25rem;
+        }
+        .cta-btn:hover { transform: translateY(-1px); }
+        .cta-btn.yt { background: #ff0000; color: #fff; }
+        .cta-btn.dl { background: var(--green); }
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .footer a { color: var(--text-muted); text-decoration: none; }
+        .footer a:hover { color: var(--text); }
+        @media (max-width: 480px) {
+            .container { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../">TheSleepOutpost</a> &rarr; Free Stories
+        </div>
+
+        <h1>Free Sleep Story Excerpts</h1>
+        <p class="subtitle">Read the opening passages from our sleep stories. Each is designed to slow your mind, ease your body, and carry you gently toward sleep. The full versions are available on <a href="https://youtube.com/@thesleepoutpost" style="color: var(--accent);">YouTube</a>.</p>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>&#128214; Want the Full Story?</h3>
+            <p>Download a complete sleep story PDF for free. No signup required.</p>
+            <a href="../free/courtyards-of-petra-at-midnight.pdf" download class="cta-btn dl">&#11015;&#65039; Free PDF: Courtyards of Petra</a>
+        </div>
+
+        <!-- ANCIENT -->
+        <div class="story-card">
+            <span class="category cat-ancient">&#127963;&#65039; Ancient Worlds</span>
+            <h2>The Great Library of Alexandria</h2>
+            <div class="excerpt">
+                <p>Tonight, we are going to travel somewhere extraordinary. Somewhere ancient and beautiful and utterly peaceful. We are going to visit the most magnificent library the world has ever known — the Great Library of Alexandria, jewel of the ancient Mediterranean world, home of all human wisdom, where scholars from every corner of the earth once walked in reverent silence among scrolls so numerous they could not be counted.</p>
+                <p style="margin-top: 0.75rem;">But we will not be rushing. We will not be hurrying toward any destination. There is no lesson to learn tonight, no knowledge to acquire. We will simply arrive, slowly and gently, and wander through those legendary halls with all the time in the world...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- NATURE -->
+        <div class="story-card">
+            <span class="category cat-nature">&#127794; Nature &amp; Forest</span>
+            <h2>A Misty Amazon Rainforest at Night</h2>
+            <div class="excerpt">
+                <p>There is a place where the ordinary world ends and something older begins — a place where the air itself is alive, heavy and warm and sweet with the breath of a thousand growing things, where the darkness is not empty but full, layered, humming softly with life. You are standing at that place now. Just standing, quietly, at the very edge of the Amazon rainforest, on a night when the moon rides low behind a veil of silver cloud and the mist rises up from the earth as though the forest itself is breathing out.</p>
+                <p style="margin-top: 0.75rem;">The first things you notice are the sounds. They come to you gradually, the way your eyes adjust to darkness. There is the high, rhythmic song of insects, thousands of them, creating a living wall of sound that somehow soothes rather than disturbs — all singing the same ancient lullaby, the one this forest has been singing for ten million years...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- SCI-FI -->
+        <div class="story-card">
+            <span class="category cat-scifi">&#128640; Science Fiction</span>
+            <h2>Night Crossing Above the Saffron Rings</h2>
+            <div class="excerpt">
+                <p>Outside the observation glass, the saffron ring fields drifted in slow ribbons, thin at the edges and luminous at the center. Tiny particles shimmered like lantern dust, bending around the ship in elegant curves while distant stars held steady in the black.</p>
+                <p style="margin-top: 0.75rem;">Inside, every task was done gently. A hand checked a gauge, another hand stirred tea, another hand adjusted a blanket around shoulders still unwinding from day-cycle stress. The bridge was quiet, but not empty; it was full of calm attention. The night crew moved like old friends who no longer need many words — a nod, a quiet smile, a shared look through glass at the same ribbon of light. In that shared attention, worry lost its grip...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- OCEAN -->
+        <div class="story-card">
+            <span class="category cat-ocean">&#127754; Ocean &amp; Coastal</span>
+            <h2>The Bioluminescent Bay</h2>
+            <div class="excerpt">
+                <p>The water here glows. Not brightly — not like a lamp or a screen — but with a soft, living radiance that shifts and pulses beneath the surface. Every gentle wave that rolls toward the shore carries a trail of blue-green light, like scattered stars dissolving back into the dark. The bay is quiet tonight. Perfectly, wonderfully quiet.</p>
+                <p style="margin-top: 0.75rem;">You are standing barefoot on a stretch of cool, smooth sand. The water laps at your toes, each tiny wave bringing with it a wash of that ethereal glow. The bioluminescent organisms are so small you can't see them individually — only the light they make together, millions of them, turning the shallows into liquid sky...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- FANTASY -->
+        <div class="story-card">
+            <span class="category cat-fantasy">&#129497; Fantasy &amp; Magic</span>
+            <h2>The Moonwell Keeper's Garden</h2>
+            <div class="excerpt">
+                <p>There is a garden at the edge of an ancient forest where the moonlight gathers like water. Not metaphorically — it actually pools in small, silver wells between the roots of the oldest trees, each one shimmering with a gentle light that seems to breathe. The keeper of this garden moves slowly among them, tending each well with the patience of someone who has done this for longer than she can remember.</p>
+                <p style="margin-top: 0.75rem;">She wears a cloak the color of moth wings, soft and grey and shimmering slightly at the hem. Her feet are bare on the moss. She carries no lantern because she needs none — the moonwells provide all the light anyone could want, and she has learned to see by starlight alone...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- JOURNEY -->
+        <div class="story-card">
+            <span class="category cat-journey">&#128506;&#65039; Journeys &amp; Adventures</span>
+            <h2>The Lighthouse at the End of the World</h2>
+            <div class="excerpt">
+                <p>The road to the lighthouse winds along the clifftop for what seems like miles, a narrow path of packed earth and sea-smoothed pebbles that curves gently with the coastline. To your left, the ocean stretches endlessly, dark and silver under the evening sky. To your right, wild grass bows and whispers in the salt breeze.</p>
+                <p style="margin-top: 0.75rem;">You have been walking for a while, but you are not tired. Your pace is easy and unhurried, the kind of walking that requires no thought, no effort — just one foot in front of the other while the wind carries away everything you no longer need to carry. Ahead, the lighthouse beam turns slowly, casting its warm eye across the water in patient, measured sweeps...</p>
+            </div>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="listen-link">&#9654; Listen to the full story on YouTube &rarr;</a>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="cta-box">
+            <h3>&#127769; 48 Stories Across 6 Worlds</h3>
+            <p>Every story is free on YouTube. Subscribe for new stories every day.</p>
+            <a href="https://youtube.com/@thesleepoutpost?sub_confirmation=1" target="_blank" class="cta-btn yt">&#128276; Subscribe Free</a>
+            <a href="../free/courtyards-of-petra-at-midnight.pdf" download class="cta-btn dl">&#11015;&#65039; Download Free PDF</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 TheSleepOutpost</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="../">Home</a> &middot;
+                <a href="../tips/">Sleep Tips</a> &middot;
+                <a href="https://youtube.com/@thesleepoutpost">YouTube</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

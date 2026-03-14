@@ -3,12 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheSleepOutpost — Sleep Stories & Guides</title>
-    <meta name="description" content="Free sleep stories, journals, and guides to help you sleep better. Digital downloads from TheSleepOutpost on YouTube.">
-    <meta property="og:title" content="TheSleepOutpost — Sleep Better Tonight">
-    <meta property="og:description" content="48 sleep stories, sleep journals, and evidence-based guides. Free sample + digital downloads.">
+    <title>TheSleepOutpost — Sleep Stories & Guides for Adults | Better Sleep Tonight</title>
+    <meta name="description" content="Free sleep stories, guided sleep journals, and evidence-based sleep guides. 48 bedtime stories for adults, designed to help you fall asleep faster. Free downloads available.">
+    <meta name="keywords" content="sleep stories for adults, bedtime stories, sleep journal, sleep tips, how to fall asleep faster, sleep hygiene guide, relaxing stories, sleep meditation, insomnia help">
+    <meta property="og:title" content="TheSleepOutpost — Sleep Stories & Guides for Better Rest">
+    <meta property="og:description" content="48 sleep stories, journals, and guides designed to help adults fall asleep faster. Free sample available.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jarvisviper5.github.io/thesleepoutpost/">
+    <meta property="og:image" content="https://jarvisviper5.github.io/thesleepoutpost/og-image.png">
+    <meta property="og:site_name" content="TheSleepOutpost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TheSleepOutpost — Sleep Stories & Guides">
+    <meta name="twitter:description" content="48 bedtime stories for adults + sleep journal + science-based guides. Free download.">
     <link rel="canonical" href="https://jarvisviper5.github.io/thesleepoutpost/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TheSleepOutpost",
+        "url": "https://jarvisviper5.github.io/thesleepoutpost/",
+        "description": "Sleep stories, journals, and evidence-based guides for better rest.",
+        "sameAs": [
+            "https://youtube.com/@thesleepoutpost",
+            "https://x.com/TheSleep37682"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TheSleepOutpost",
+        "url": "https://jarvisviper5.github.io/thesleepoutpost/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://youtube.com/@thesleepoutpost/search?query={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Sleep Story Collections",
+        "description": "Digital sleep story bundles for adults",
+        "numberOfItems": 10,
+        "itemListElement": [
+            {
+                "@type": "Product",
+                "position": 1,
+                "name": "Complete Sleep Story Library — 48 Bedtime Stories",
+                "description": "All 48 sleep stories across 6 categories. 390,000+ words of soothing bedtime reading.",
+                "offers": {"@type": "Offer", "price": "29.99", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder"}
+            },
+            {
+                "@type": "Product",
+                "position": 2,
+                "name": "Sleep Transformation Toolkit",
+                "description": "Sleep Hygiene Masterclass (16 chapters) + 30-Day Sleep Journal bundle.",
+                "offers": {"@type": "Offer", "price": "11.99", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder"}
+            }
+        ]
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -35,12 +96,13 @@
         .stars {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-                        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
-                        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-                        radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.4), transparent),
-                        radial-gradient(2px 2px at 200px 50px, #eee, transparent),
-                        radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.5), transparent);
+            background:
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.4), transparent),
+                radial-gradient(2px 2px at 200px 50px, #eee, transparent),
+                radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.5), transparent);
             background-repeat: repeat;
             background-size: 320px 200px;
             opacity: 0.3;
@@ -57,25 +119,42 @@
         }
 
         /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .header .moon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        .header h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.25rem;
-        }
+        .header { text-align: center; margin-bottom: 1.5rem; }
+        .header .moon { font-size: 3rem; margin-bottom: 0.5rem; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
         .header h1 span { color: var(--accent); }
-        .header .tagline {
+        .header .tagline { color: var(--text-muted); font-size: 1rem; margin-bottom: 0.5rem; }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 1rem;
         }
+        .stats-bar .stat { text-align: center; }
+        .stats-bar .stat-num { font-size: 1.2rem; font-weight: 700; color: var(--accent); display: block; }
+
+        /* Nav */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav a:hover { color: var(--text); border-color: var(--accent); }
 
         /* YouTube CTA */
         .yt-link {
@@ -114,7 +193,7 @@
             border: 2px solid var(--green);
             border-radius: 14px;
             padding: 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -122,10 +201,7 @@
         .free-banner::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle at 30% 30%, rgba(63, 185, 80, 0.08), transparent 50%);
             pointer-events: none;
         }
@@ -172,6 +248,43 @@
             box-shadow: 0 4px 16px rgba(63, 185, 80, 0.35);
         }
 
+        /* About section */
+        .about-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .about-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .about-section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.75rem;
+        }
+        .about-section li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .about-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+
         /* Product Cards */
         .products { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
 
@@ -186,30 +299,15 @@
             border-color: var(--accent);
             box-shadow: 0 0 20px var(--accent-glow);
         }
-
         .product-card .top-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 0.5rem;
         }
-        .product-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            flex: 1;
-            padding-right: 1rem;
-        }
-        .product-card .price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--green);
-            white-space: nowrap;
-        }
-        .product-card .desc {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-bottom: 0.75rem;
-        }
+        .product-card h3 { font-size: 1.05rem; font-weight: 600; flex: 1; padding-right: 1rem; }
+        .product-card .price { font-size: 1.1rem; font-weight: 700; color: var(--green); white-space: nowrap; }
+        .product-card .desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.75rem; }
         .product-card .badge {
             display: inline-block;
             font-size: 0.72rem;
@@ -254,24 +352,58 @@
         /* Notify section */
         .notify-section {
             text-align: center;
-            margin: 1.5rem 0 2.5rem;
-            padding: 1.25rem;
-            background: var(--card-bg);
+            margin: 1.5rem 0 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(124, 138, 255, 0.08), rgba(240, 192, 64, 0.06));
             border: 1px solid var(--border);
             border-radius: 12px;
+        }
+        .notify-section h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
         .notify-section p {
             color: var(--text-muted);
             font-size: 0.88rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         .notify-section .sub-cta {
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #fff;
+            background: var(--accent);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            transition: transform 0.15s;
         }
-        .notify-section .sub-cta:hover { text-decoration: underline; }
+        .notify-section .sub-cta:hover { transform: translateY(-1px); }
+
+        /* Resources links */
+        .resources {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: border-color 0.2s;
+        }
+        .resource-link:hover { border-color: var(--accent); }
+        .resource-link .emoji { font-size: 1.2rem; }
 
         /* Social links */
         .socials {
@@ -297,12 +429,16 @@
             padding-top: 1.5rem;
             border-top: 1px solid var(--border);
         }
+        .footer a { color: var(--text-muted); text-decoration: none; }
+        .footer a:hover { color: var(--text); }
 
         @media (max-width: 480px) {
             .container { padding: 1.5rem 1rem; }
             .header h1 { font-size: 1.5rem; }
             .product-card .top-row { flex-direction: column; gap: 0.25rem; }
             .product-card .price { align-self: flex-start; }
+            .resources { grid-template-columns: 1fr; }
+            .stats-bar { gap: 1rem; }
         }
     </style>
 </head>
@@ -313,13 +449,28 @@
         <div class="header">
             <div class="moon">&#127769;</div>
             <h1>The<span>Sleep</span>Outpost</h1>
-            <p class="tagline">Sleep stories, guides & tools for better rest</p>
+            <p class="tagline">Sleep stories, guides &amp; tools for better rest</p>
         </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat"><span class="stat-num">48</span> Stories</div>
+            <div class="stat"><span class="stat-num">6</span> Categories</div>
+            <div class="stat"><span class="stat-num">390k+</span> Words</div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="nav">
+            <a href="#products">Products</a>
+            <a href="tips/">Sleep Tips</a>
+            <a href="stories/">Free Stories</a>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank">YouTube</a>
+        </nav>
 
         <!-- YouTube -->
         <a href="https://youtube.com/@thesleepoutpost?sub_confirmation=1" target="_blank" class="yt-link">
             <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            Subscribe on YouTube &mdash; Free
+            &#9654; Listen Free on YouTube
         </a>
 
         <!-- FREE DOWNLOAD BANNER -->
@@ -332,8 +483,44 @@
             </a>
         </div>
 
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>&#128164; What is TheSleepOutpost?</h2>
+            <p>We create long-form sleep stories designed to help adults fall asleep naturally. Each story is carefully crafted with a slow, gentle pace — no sudden twists, no cliffhangers, just warm, descriptive narratives that carry you into restful sleep.</p>
+            <p>Our stories span six worlds:</p>
+            <ul>
+                <li>Ancient civilizations — Petra, Memphis, Alexandria, Samarkand</li>
+                <li>Ocean &amp; coastal — bioluminescent bays, moonlit harbors, kelp forests</li>
+                <li>Science fiction — space stations, ring worlds, Europa, deep space</li>
+                <li>Nature &amp; forest — redwood canopies, bamboo highlands, fern valleys</li>
+                <li>Fantasy &amp; magic — apothecaries, enchanted groves, moonwells</li>
+                <li>Journeys &amp; adventures — lighthouses, caravans, firefly hollows</li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="section-label">&#128218; Free Resources</div>
+        <div class="resources">
+            <a href="tips/" class="resource-link">
+                <span class="emoji">&#128161;</span>
+                <span>10 Sleep Tips That Work</span>
+            </a>
+            <a href="stories/" class="resource-link">
+                <span class="emoji">&#128214;</span>
+                <span>Free Story Excerpts</span>
+            </a>
+            <a href="https://youtube.com/@thesleepoutpost" target="_blank" class="resource-link">
+                <span class="emoji">&#127909;</span>
+                <span>Full Stories on YouTube</span>
+            </a>
+            <a href="free/courtyards-of-petra-at-midnight.pdf" download class="resource-link">
+                <span class="emoji">&#128196;</span>
+                <span>Free PDF Download</span>
+            </a>
+        </div>
+
         <!-- Featured Products -->
-        <div class="section-label">&#127942; Coming Soon &mdash; Digital Downloads</div>
+        <div id="products" class="section-label">&#127942; Digital Downloads — Coming Soon</div>
         <div class="products">
             <div class="product-card">
                 <div class="top-row">
@@ -356,8 +543,7 @@
             </div>
         </div>
 
-        <!-- Guides & Tools -->
-        <div class="section-label">&#128214; Guides & Tools</div>
+        <div class="section-label">&#128214; Guides &amp; Tools</div>
         <div class="products">
             <div class="product-card">
                 <div class="top-row">
@@ -378,7 +564,6 @@
             </div>
         </div>
 
-        <!-- Story Bundles -->
         <div class="section-label">&#128218; Story Script Bundles</div>
         <div class="products">
             <div class="product-card">
@@ -392,7 +577,7 @@
 
             <div class="product-card">
                 <div class="top-row">
-                    <h3>&#127754; Ocean & Coastal (11 stories)</h3>
+                    <h3>&#127754; Ocean &amp; Coastal (11 stories)</h3>
                     <span class="price">$9.99</span>
                 </div>
                 <p class="desc">Bioluminescent bays, kelp forests, moonlit harbors. Our largest bundle &mdash; 11 stories of oceanic calm.</p>
@@ -410,16 +595,16 @@
 
             <div class="product-card">
                 <div class="top-row">
-                    <h3>&#127794; Nature & Forest (9 stories)</h3>
+                    <h3>&#127794; Nature &amp; Forest (9 stories)</h3>
                     <span class="price">$9.99</span>
                 </div>
-                <p class="desc">Bamboo highlands, redwood canopies, fern valleys. 9 stories of nature's quiet embrace.</p>
+                <p class="desc">Bamboo highlands, redwood canopies, fern valleys. 9 stories of nature&rsquo;s quiet embrace.</p>
                 <span class="buy-link coming-soon">Coming Soon</span>
             </div>
 
             <div class="product-card">
                 <div class="top-row">
-                    <h3>&#129497; Fantasy & Magic (6 stories)</h3>
+                    <h3>&#129497; Fantasy &amp; Magic (6 stories)</h3>
                     <span class="price">$9.99</span>
                 </div>
                 <p class="desc">Apothecaries, moonwell keepers, enchanted groves. Mystical bedtime adventures for the imagination.</p>
@@ -428,7 +613,7 @@
 
             <div class="product-card">
                 <div class="top-row">
-                    <h3>&#128506;&#65039; Journeys & Adventures (7 stories)</h3>
+                    <h3>&#128506;&#65039; Journeys &amp; Adventures (7 stories)</h3>
                     <span class="price">$9.99</span>
                 </div>
                 <p class="desc">Lighthouses, caravans, firefly hollows. Wanderlust for the sleepy soul.</p>
@@ -436,20 +621,30 @@
             </div>
         </div>
 
-        <!-- Notify / Subscribe CTA -->
+        <!-- Launch Notify -->
         <div class="notify-section">
-            <p>Products launching soon. Subscribe on YouTube to be the first to know:</p>
-            <a href="https://youtube.com/@thesleepoutpost?sub_confirmation=1" target="_blank" class="sub-cta">&#128276; Subscribe to TheSleepOutpost</a>
+            <h3>&#128276; Get Notified When We Launch</h3>
+            <p>Products are launching soon. Subscribe on YouTube — we'll announce there first.</p>
+            <a href="https://youtube.com/@thesleepoutpost?sub_confirmation=1" target="_blank" class="sub-cta">
+                &#128276; Subscribe for Updates
+            </a>
         </div>
 
         <!-- Social Links -->
         <div class="socials">
             <a href="https://youtube.com/@thesleepoutpost" target="_blank">YouTube</a>
             <a href="https://x.com/TheSleep37682" target="_blank">X / Twitter</a>
+            <a href="tips/">Sleep Tips</a>
+            <a href="stories/">Free Stories</a>
         </div>
 
         <div class="footer">
-            &copy; 2026 TheSleepOutpost &middot; Sleep well, live better.
+            <p>&copy; 2026 TheSleepOutpost &middot; Sleep well, live better.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="tips/">Sleep Tips</a> &middot;
+                <a href="stories/">Free Stories</a> &middot;
+                <a href="https://youtube.com/@thesleepoutpost">YouTube</a>
+            </p>
         </div>
     </div>
 </body>
